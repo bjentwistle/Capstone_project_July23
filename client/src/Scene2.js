@@ -21,11 +21,39 @@ class Scene2 extends Phaser.Scene {
 
         // this.blueVirus.setScale(1);
         this.blueVirus = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "blueVirus");
-        const cell = this.rbcell = this.add.sprite(this.config.height / 2, this.config.width / 2, "rbcell");
+        this.rbcell = this.add.sprite(this.config.height / 2, this.config.width / 2, "rbcell");
         this.blueVirus.flipX = true;
 
-        const scale = .1; //shrinks size of image
-        cell.setScale(scale)
+        const scale = .1;
+        this.rbcell.setScale(scale)//shrinks size of image
+
+        
+
+
+        // let maxObjects = 15;//max num we want created
+        // for (let i = 0; i <= maxObjects; i++) {
+        //     this.rbcell = this.physics.add.sprite(16, 16, "rbcell");
+        //     this.rbcell.add(cell);
+        //     cell.setRandomPosition(0, 0, this.game.config.width, this.game.config.height);
+        // }
+
+        const numCells = 15; // Number of cell images you want to create
+        const cellSpacing = 100; // Spacing between each cell image
+
+        for (let i = 0; i < numCells; i++) {
+            const xPos = (i + 1) * cellSpacing; // Calculate the x-position for each cell image
+            const yPos = this.config.height / 2; // Set the y-position of the cell image
+
+            const rbcell = this.add.sprite(xPos, yPos, 'rbcell');
+
+            // Set the desired scale or display size for each cell image
+            const scale = 0.1; // Set the scale value as per your requirement
+            rbcell.setScale(scale);
+            // Alternatively, you can use setDisplaySize to specify width and height directly:
+            // rbcell.setDisplaySize(width, height)
+        }
+        // this.rbcell = this.physics.add.group(); //group for the cell
+
 
         this.anims.create({
             key: "blueVirus_anim",
@@ -43,7 +71,7 @@ class Scene2 extends Phaser.Scene {
 
         //play the animations
         this.blueVirus.play("blueVirus_anim");
-        this.rbcell.play("rbcell");
+        // this.rbcell.play("rbcell");
     }
 
 

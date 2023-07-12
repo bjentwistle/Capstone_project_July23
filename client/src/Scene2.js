@@ -9,6 +9,7 @@ class Scene2 extends Phaser.Scene {
 
     }
     create() {
+        this.config = this.sys.game.config
         this.background = this.add.image(0,0, "gutsy");
         //this.background.angle = 90; //can rotate it for different aspects.
         this.background = this.add.tileSprite(0, 0, window.innerWidth, window.innerHeight, "gutsy");
@@ -20,7 +21,11 @@ class Scene2 extends Phaser.Scene {
 
         // this.blueVirus.setScale(1);
         this.blueVirus = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, "blueVirus");
+        const cell = this.rbcell = this.add.sprite(this.config.height / 2, this.config.width / 2, "rbcell");
         this.blueVirus.flipX = true;
+
+        const scale = .1; //shrinks size of image
+        cell.setScale(scale)
 
         this.anims.create({
             key: "blueVirus_anim",
@@ -29,14 +34,23 @@ class Scene2 extends Phaser.Scene {
             repeat: -1
         });
 
+        this.anims.create({
+            key: "rbcell_anim",
+            frames: this.anims.generateFrameNumbers("rbcell",{ start: 0, end: 3 }),
+            frameRate: 7,
+            repeat: -1
+        });
+
         //play the animations
         this.blueVirus.play("blueVirus_anim");
+        this.rbcell.play("rbcell");
     }
 
 
     update(){
         // to call a function to move the cells vertically
         this.moveCell(this.blueVirus, 1);
+        this.moveCell(this.rbcell, 1);
         // this.moveCell(this.cell2, 1.5);
         // this.moveCell(this.cell3, 2);
 

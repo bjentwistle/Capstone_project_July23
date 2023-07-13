@@ -62,12 +62,7 @@ class Scene2 extends Phaser.Scene {
             repeat: -1
         });
 
-        this.anims.create({
-            key: "rbcell_anim",
-            frames: this.anims.generateFrameNumbers("rbcell",{ start: 0, end: 3 }),
-            frameRate: 7,
-            repeat: -1
-        });
+        
 
         //play the animations
         this.blueVirus.play("blueVirus_anim");

@@ -38,7 +38,9 @@ Then in your chose directory:
 In a new tab, type:
 
 - `cd server`
-- `npm i mongodb@3.5.7` - may also need `npm i -g mongosh`
+- `npm i mongodb@3.5.7`
+- may also need `npm i -g mongosh`
+- may need `npm i nodemon`
 - `npm run seeds`
 - `npm run server:dev`
 

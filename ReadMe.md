@@ -38,7 +38,7 @@ Then in your chose directory:
 In a new tab, type:
 
 - `cd server`
-- `npm i mongodb@3.5.7`
+- `npm i mongodb@3.5.7` make sure you have mondgoDB installed [MongoDB](https://www.mongodb.com/docs/manual/installation/)
 - may also need `npm i -g mongosh`
 - may need `npm i nodemon`
 - `npm run seeds`

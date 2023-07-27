@@ -324,18 +324,21 @@ class Scene4 extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 
+        // Split A/D and W/S checks so that you can move in diagonals.
         if (keyA.isDown || this.cursors.left.isDown) {
             this.blueVirus.x -= this.speed;
-           // console.log('A key pressed')
-        } else if (keyS.isDown || this.cursors.down.isDown) {
-            this.blueVirus.y += this.speed;
-            //console.log('S key pressed')
+          
         } else if (keyD.isDown || this.cursors.right.isDown) {
             this.blueVirus.x += this.speed;
-           // console.log('D key pressed')
+          
+        }
+        
+        if (keyS.isDown || this.cursors.down.isDown) {
+            this.blueVirus.y += this.speed;
+           
         } else if (keyW.isDown || this.cursors.up.isDown) {
             this.blueVirus.y -= this.speed;
-            //console.log('W key pressed')
+           
         }
        
        

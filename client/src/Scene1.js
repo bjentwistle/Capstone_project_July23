@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import WebFontFile from '/src/WebFontFile'
-import {postUser} from '/src/services.js'; 
+//import {postUser} from '/src/services.js'; 
 
 
 class Scene1 extends Phaser.Scene {

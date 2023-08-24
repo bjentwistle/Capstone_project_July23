@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import {putUser} from '/src/services.js'
+//import {putUser} from '/src/services.js'
 import WebFontFile from '/src/WebFontFile'
 
 class VirusBullet extends Phaser.Physics.Arcade.Sprite{

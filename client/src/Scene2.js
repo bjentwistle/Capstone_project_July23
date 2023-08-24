@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import {putUser} from '/src/services.js'
+//import {putUser} from '/src/services.js'
 import WebFontFile from '/src/WebFontFile'
 
 class VirusBullet extends Phaser.Physics.Arcade.Sprite{
@@ -105,7 +105,7 @@ class Scene2 extends Phaser.Scene {
 
         //retrieve playerName and Id from memory
         this.playerName = JSON.parse(sessionStorage.getItem('data')).userName;
-        this.playerId = JSON.parse(sessionStorage.getItem('playerId')).playerId;
+        //this.playerId = JSON.parse(sessionStorage.getItem('playerId')).playerId;
 
         const middleOfScreenH = this.screenHeight / 2
         const middleOfScreenW = this.screenWidth / 2;
@@ -375,31 +375,31 @@ class Scene2 extends Phaser.Scene {
                 sessionStorage.setItem("score", JSON.stringify({ "score": finalScore}));
 
                 // Get the player's id from the session storage
-                const playerIdRtn = JSON.parse(sessionStorage.getItem('playerId')).playerId;
+                // const playerIdRtn = JSON.parse(sessionStorage.getItem('playerId')).playerId;
             
-                if (!playerIdRtn) {
-                    console.error("Player ID not found in session storage.");
-                    return;
-                }
+                // if (!playerIdRtn) {
+                //     console.error("Player ID not found in session storage.");
+                //     return;
+                // }
 
-                try {
-                    // Get the player's name from the session storage
-                    const playerName = JSON.parse(sessionStorage.getItem('data')).userName;
+                // try {
+                //     // Get the player's name from the session storage
+                //     const playerName = JSON.parse(sessionStorage.getItem('data')).userName;
 
-                    // Create an updated payload with the new high score
-                    const updatedPayload = {
-                        _id: playerIdRtn,
-                        name: playerName,
-                        highScore: finalScore
-                    };
+                //     // Create an updated payload with the new high score
+                //     const updatedPayload = {
+                //         _id: playerIdRtn,
+                //         name: playerName,
+                //         highScore: finalScore
+                //     };
 
-                    // Call the putUser function from services.js to update the player's score in the server
-                    const data = putUser(updatedPayload);
+                //     // Call the putUser function from services.js to update the player's score in the server
+                //     const data = putUser(updatedPayload);
 
-                    //console.log("Updated user data:", data); // You can check the updated user data if needed
-                } catch (error) {
-                    console.error(error);
-                }
+                //     //console.log("Updated user data:", data); // You can check the updated user data if needed
+                // } catch (error) {
+                //     console.error(error);
+                // }
 
             }else {
             this.scene.start("gameOver");
@@ -412,31 +412,31 @@ class Scene2 extends Phaser.Scene {
             sessionStorage.setItem("score", JSON.stringify({ "score": finalScore}));
 
             // Get the player's id from the session storage
-            const playerIdRtn = JSON.parse(sessionStorage.getItem('playerId')).playerId;
+            // const playerIdRtn = JSON.parse(sessionStorage.getItem('playerId')).playerId;
         
-            if (!playerIdRtn) {
-                console.error("Player ID not found in session storage.");
-                return;
-            }
+            // if (!playerIdRtn) {
+            //     console.error("Player ID not found in session storage.");
+            //     return;
+            // }
 
-            try {
-                // Get the player's name from the session storage
-                const playerName = JSON.parse(sessionStorage.getItem('data')).userName;
+            // try {
+            //     // Get the player's name from the session storage
+            //     const playerName = JSON.parse(sessionStorage.getItem('data')).userName;
 
-                // Create an updated payload with the new high score
-                const updatedPayload = {
-                    _id: playerIdRtn,
-                    name: playerName,
-                    highScore: finalScore
-                };
+            //     // Create an updated payload with the new high score
+            //     const updatedPayload = {
+            //         _id: playerIdRtn,
+            //         name: playerName,
+            //         highScore: finalScore
+            //     };
 
-                // Call the putUser function from services.js to update the player's score in the server
-                const data = putUser(updatedPayload);
+            //     // Call the putUser function from services.js to update the player's score in the server
+            //     const data = putUser(updatedPayload);
 
-                //console.log("Updated user data:", data); // You can check the updated user data if needed
-            } catch (error) {
-                console.error(error);
-            }
+            //     //console.log("Updated user data:", data); // You can check the updated user data if needed
+            // } catch (error) {
+            //     console.error(error);
+            // }
         }
         
     

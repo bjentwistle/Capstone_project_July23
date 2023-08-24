@@ -115,19 +115,19 @@ class Scene1 extends Phaser.Scene {
                 "userName": inputValue
             }));
             //posting name and zero to DB        
-            try {
-                // Call the postUser function from services.js to post the data to the server
-                const data = await postUser({ name: inputValue, highScore: 0 });
+            // try {
+            //     // Call the postUser function from services.js to post the data to the server
+            //     const data = await postUser({ name: inputValue, highScore: 0 });
     
-                // Access the id property from the response data
-                const playerIdRtn = data._id;
+            //     // Access the id property from the response data
+            //     const playerIdRtn = data._id;
     
-                sessionStorage.setItem('playerId', JSON.stringify({ "playerId": playerIdRtn }));
+            //     sessionStorage.setItem('playerId', JSON.stringify({ "playerId": playerIdRtn }));
                 this.inputElement.hidden = true;
                 this.submitButton.hidden = true;
                 this.scene.start("playGame");
-            } 
-            catch (error) {console.error(error);}
+            // } 
+            // catch (error) {console.error(error);}
         }  
     
 }//end bracket

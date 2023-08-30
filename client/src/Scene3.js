@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import WebFontFile from '/src/WebFontFile'
-//import {getUsers} from '/src/services.js'; 
+import {getUsers} from '/src/services.js'; 
 
 class Scene3 extends Phaser.Scene {
     constructor () {
@@ -29,31 +29,31 @@ class Scene3 extends Phaser.Scene {
         this.add.text(canvasWidth/2, 200, this.playerName +" : " + this.finalScore + " pts",{font: '46px', fill: '#ffffff' }).setOrigin(0.5)
 
         //LeaderBoard needs to extract names and scores from the database
-        // const results = []
-        // const data = getUsers () 
-        // .then(results => {
+        const results = []
+        const data = getUsers () 
+        .then(results => {
             
-        //     //sort results from highest to low
-        //     results.sort((a, b) => b.highScore - a.highScore);
-        //     this.add.text(canvasWidth / 2, 350, "Highest Scores", {fontFamily: 'Farro', fontSize: "36pt", align: "center", color:"black", position: "absolute", strokeThickness: 4}).setOrigin(0.5);
+            //sort results from highest to low
+            results.sort((a, b) => b.highScore - a.highScore);
+            this.add.text(canvasWidth / 2, 350, "Highest Scores", {fontFamily: 'Farro', fontSize: "36pt", align: "center", color:"black", position: "absolute", strokeThickness: 4}).setOrigin(0.5);
             
-        //     let yPosition = 400;
+            let yPosition = 400;
 
-        //     // Loop through the results and display player names and scores
-        //     for (let i = 0; i < 5; i++) {
-        //         const playerName = results[i].name;
-        //         const playerScore = results[i].highScore;
+            // Loop through the results and display player names and scores
+            for (let i = 0; i < 5; i++) {
+                const playerName = results[i].name;
+                const playerScore = results[i].highScore;
 
-        //         // Display player name and score
-        //         this.add.text(canvasWidth / 2, yPosition, playerName + ": " + playerScore + " pts", {
-        //             font: '32px',
-        //             fill: '#ffffff'
-        //         }).setOrigin(0.5);
+                // Display player name and score
+                this.add.text(canvasWidth / 2, yPosition, playerName + ": " + playerScore + " pts", {
+                    font: '32px',
+                    fill: '#ffffff'
+                }).setOrigin(0.5);
 
-        //         yPosition += 40; // Increment yPosition to show the next player's data below the previous one
-        //     };
-        // })
-        // .catch(err => console.log(err.response))
+                yPosition += 40; // Increment yPosition to show the next player's data below the previous one
+            };
+        })
+        .catch(err => console.log(err.response))
         
          // Add a button or key event to return to the main game scene
          this.input.keyboard.on('keydown-M', this.returnToMainGame, this);

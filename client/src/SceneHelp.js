@@ -12,9 +12,9 @@ class SceneHelp extends Phaser.Scene {
         const fonts = new WebFontFile(this.load, 'Farro')
 		this.load.addFile(fonts)
         //load sounds
-        this.load.audio("gameMusic", "public/assets/sounds/gameMusic.mp3", "public/assets/sounds/gameMusic.ogg" )
+        this.load.audio("gameMusic", "assets/sounds/gameMusic.mp3", "assets/sounds/gameMusic.ogg" )
         // //load images
-        this.load.image("Biohazard", "public/assets/images/Biohazard.png");
+        this.load.image("Biohazard", "assets/images/Biohazard.png");
       
     }
 

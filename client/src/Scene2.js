@@ -75,16 +75,16 @@ class Scene2 extends Phaser.Scene {
         const fonts = new WebFontFile(this.load, 'Bungee')
 		this.load.addFile(fonts)
         //images
-        this.load.image("virusBullet", "public/assets/images/bullet.png");
+        this.load.image("virusBullet", "assets/images/bullet.png");
         //audio
-        this.load.audio("beam", "public/assets/sounds/beam.ogg", "public/assets/sounds/beam.mp3")
-        this.load.audio("explosion", "public/assets/sounds/explosion.mp3")
-        this.load.audio("gameOver", "public/assets/sounds/gameOver.mp3")
-        this.load.audio("splat", "public/assets/sounds/splat.mp3")
-        this.load.audio("success", "public/assets/sounds/success.mp3")
+        this.load.audio("beam", "assets/sounds/beam.ogg", "assets/sounds/beam.mp3")
+        this.load.audio("explosion", "assets/sounds/explosion.mp3")
+        this.load.audio("gameOver", "assets/sounds/gameOver.mp3")
+        this.load.audio("splat", "assets/sounds/splat.mp3")
+        this.load.audio("success", "assets/sounds/success.mp3")
     
         //spritesheets
-        this.load.spritesheet("bloodCell", "/public/assets/spritesheets/whitebc.png",{
+        this.load.spritesheet("bloodCell", "/assets/spritesheets/whitebc.png",{
             frameWidth: 41,
             frameHeight: 38
         });

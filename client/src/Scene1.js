@@ -14,17 +14,17 @@ class Scene1 extends Phaser.Scene {
         const fonts = new WebFontFile(this.load, 'Farro')
 		this.load.addFile(fonts)
         //load sounds
-        this.load.audio("gameMusic", "public/assets/sounds/gameMusic.mp3", "public/assets/sounds/gameMusic.ogg" )
-        this.load.audio("playGame", "public/assets/sounds/playGame.mp3" )
+        this.load.audio("gameMusic", "assets/sounds/gameMusic.mp3", "assets/sounds/gameMusic.ogg" )
+        this.load.audio("playGame", "assets/sounds/playGame.mp3" )
         //load images
-        this.load.image("gutsy", "public/assets/images/gutsy.png");
-        this.load.image("Biohazard", "public/assets/images/Biohazard.png");
+        this.load.image("gutsy", "assets/images/gutsy.png");
+        this.load.image("Biohazard", "assets/images/Biohazard.png");
         //load sprites
-        this.load.spritesheet("blueVirus", "public/assets/spritesheets/bluespritesheet.png",{
+        this.load.spritesheet("blueVirus", "assets/spritesheets/bluespritesheet.png",{
             frameWidth: 50,
             frameHeight: 50
         });
-        this.load.spritesheet("cellsplosionSml", "public/assets/spritesheets/cellsplosionSml.png", {
+        this.load.spritesheet("cellsplosionSml", "assets/spritesheets/cellsplosionSml.png", {
             frameWidth: 63, // Replace with the actual frame width of each frame
             frameHeight: 64 // Replace with the actual frame height of each frame
         });

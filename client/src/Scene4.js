@@ -74,9 +74,9 @@ class Scene4 extends Phaser.Scene {
         const fonts = new WebFontFile(this.load, 'Bungee')
 		this.load.addFile(fonts)
         //load images
-        this.load.image("virusBullet", "public/assets/images/bullet.png");
+        this.load.image("virusBullet", "assets/images/bullet.png");
         //load sprites
-        this.load.spritesheet("bloodCell", "/public/assets/spritesheets/whitebc.png",{
+        this.load.spritesheet("bloodCell", "assets/spritesheets/whitebc.png",{
             frameWidth: 41,
             frameHeight: 40
         });

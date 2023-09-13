@@ -6,7 +6,7 @@ const cors = require("cors");
 // const url = 'mongodb://localhost:27017'
 //This new url points to MongodDB Atlas account run by Jack.
 //const url = "mongodb+srv://app:test123@cluster0.0uqzzoz.mongodb.net/?appName=mongosh+1.10.6"
-const url = "mongodb+srv://players:3uuRu7uhGcHKA@cluster0.0uqzzoz.mongodb.net/?appName=mongosh+1.10.6"
+const url = "mongodb+srv://players:PWZcLbF3QNnjSz4Z@clusterbass.isosd9k.mongodb.net/?retryWrites=true&w=majority"
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
 

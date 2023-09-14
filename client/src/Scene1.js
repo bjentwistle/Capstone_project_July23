@@ -121,13 +121,14 @@ class Scene1 extends Phaser.Scene {
     
                 // Access the id property from the response data
                 const playerIdRtn = data._id;
+                console.log(data)
     
                 sessionStorage.setItem('playerId', JSON.stringify({ "playerId": playerIdRtn }));
                 this.inputElement.hidden = true;
                 this.submitButton.hidden = true;
                 this.scene.start("playGame");
             } 
-            catch (error) {console.error(error);}
+            catch (error) {console.error(error)};
         }  
     
 }//end bracket

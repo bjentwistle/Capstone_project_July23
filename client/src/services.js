@@ -1,4 +1,4 @@
-const baseURL = "/api/scores_db/"
+const baseURL = "http://localhost:27017/api/scores_db/"
 
 
 //this would fetch all of our users
@@ -9,7 +9,7 @@ export const getUsers = () => {
 
 //adds new user to the db
 export const postUser = (payload) => {
-    return fetch(baseURL, + 'users', {
+    return fetch(baseURL, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' }
@@ -34,7 +34,4 @@ export const putUser = (updatedPayload) => {
     })
         .then(res => res.json())
 }
-
-
-
 
